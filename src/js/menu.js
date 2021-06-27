@@ -1,9 +1,9 @@
-import '@fortawesome/fontawesome-free/js/brands.js';
-import '@fortawesome/fontawesome-free/js/solid.js';
-import '@fortawesome/fontawesome-free/js/fontawesome.js';
+// import '@fortawesome/fontawesome-free/js/brands.js';
+// import '@fortawesome/fontawesome-free/js/solid.js';
+// import '@fortawesome/fontawesome-free/js/fontawesome.js';
 import eventsTemplate from '../templates/events.hbs';
 import upcomingEvents from '../menu.json';
-import 'modern-normalize/modern-normalize.css';
+// import 'modern-normalize/modern-normalize.css';
 
 
 
@@ -26,6 +26,14 @@ const themeSwitch = document.querySelector('#theme-switch-toggle');
 themeSwitch.addEventListener('change', onClickThemeSwitch);
 
 
+if (localStorage.getItem('theme-type') === Theme.DARK) {
+  bodyEl.classList.add(Theme.DARK)
+  localStorage.setItem('theme-type', Theme.DARK)
+  themeSwitch.setAttribute('chacked', true)
+} else {
+   bodyEl.classList.add(Theme.LIGHT)
+}
+
 
 function onClickThemeSwitch() {
   if (bodyEl.classList.value === Theme.LIGHT) {
@@ -42,13 +50,7 @@ function onClickThemeSwitch() {
 }
 
 
-if (localStorage.getItem('theme-type') === Theme.DARK) {
-  localStorage.setItem('theme-type', Theme.DARK)
-  // themeSwitch.setAttribute('chacked', true)
-  bodyEl.classList.add(Theme.DARK)
-} else {
-  bodyEl.classList.add(Theme.LIGHT) 
-}
+
 
 
 
