@@ -1,5 +1,3 @@
-
-import 'modern-normalize/modern-normalize.css';
 import './sass/main.scss';
 import './js/menu.js';
 // import upcomingEvents from './menu.json';
